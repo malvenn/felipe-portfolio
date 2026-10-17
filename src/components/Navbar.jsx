@@ -1,14 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
+  const [pictureOpen, setPictureOpen] = useState(false);
+
   useEffect(() => {
-    if (!isOpen) return undefined;
+    if (!isOpen && !pictureOpen) return undefined;
     const closeOnEscape = (event) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") {
+        onClose();
+        setPictureOpen(false);
+      }
     };
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, pictureOpen]);
 
   return (
     <>
@@ -18,7 +23,12 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
       </button>
       <button className={`sidebar-overlay${isOpen ? " is-open" : ""}`} type="button" aria-label="Close navigation menu" tabIndex={isOpen ? 0 : -1} onClick={onClose} />
       <aside id="site-navigation" className={`sidebar${isOpen ? " is-open" : ""}`} aria-hidden={!isOpen} inert={!isOpen}>
-        <a href="#home" className="sidebar-brand" onClick={onClose} aria-label="Felipe Plado, home">&lt;Felipe <span>/&gt;</span></a>
+        <div className="sidebar-brand">
+          <button className="sidebar-brand-avatar-button" type="button" onClick={() => setPictureOpen(true)} aria-label="View a larger portrait of Felipe Plado">
+            <img src="/profile.png.png" alt="" className="sidebar-brand-avatar" />
+          </button>
+          <a href="#home" className="sidebar-brand-name" onClick={onClose} aria-label="Felipe Plado, home">&lt;Felipe <span>/&gt;</span></a>
+        </div>
 
         <p className="sidebar-label">Navigate</p>
         <nav className="nav-links" aria-label="Main navigation">
@@ -39,6 +49,16 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
           <span className="sidebar-copyright">© 2026 Felipe L. Plado Jr.</span>
         </div>
       </aside>
+      {pictureOpen && (
+        <div className="portrait-lightbox" role="presentation">
+          <button className="portrait-lightbox-backdrop" type="button" aria-label="Close portrait preview" onClick={() => setPictureOpen(false)} />
+          <div className="portrait-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Felipe Plado portrait">
+            <button className="portrait-lightbox-close" type="button" onClick={() => setPictureOpen(false)} aria-label="Close portrait preview">×</button>
+            <img src="/profile.png.png" alt="Felipe L. Plado Jr." />
+          </div>
+          <span className="portrait-lightbox-name">Felipe L. Plado Jr.</span>
+        </div>
+      )}
     </>
   );
 }
