@@ -5,19 +5,23 @@ export default function Contact() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const subject = encodeURIComponent(`Portfolio inquiry from ${formData.get("name")}`);
+    const body = encodeURIComponent(`Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\n\n${formData.get("message")}`);
     setSubmitted(true);
-    event.currentTarget.reset();
+    window.location.href = `mailto:malvinplado@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (
     <section id="contact" className="contact-section page-width">
       <div className="contact-panel">
         <div className="contact-copy">
-          <p className="section-kicker">05 · What's next?</p>
-          <h2 className="contact-title">Have a good idea?<br /><span>Let’s make it real.</span></h2>
-          <p className="contact-desc">I’m currently looking for IT internship opportunities and interesting projects. If you have something in mind, I’d love to hear about it.</p>
-          <a href="mailto:felipeplado21@gmail.com" className="contact-email">felipeplado21@gmail.com <span aria-hidden="true">↗</span></a>
-          <div className="social-links"><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
+          <p className="section-kicker">06 · Contact</p>
+          <h2 className="contact-title">Let’s start a<br /><span>conversation.</span></h2>
+          <p className="contact-desc">I’m open to internship opportunities, collaborations, and conversations about practical software ideas.</p>
+          <a href="mailto:malvinplado@gmail.com" className="contact-email">malvinplado@gmail.com <span aria-hidden="true">↗</span></a>
+          <a href="tel:+639913878919" className="contact-phone">+63 991 387 8919</a>
+          <div className="social-links"><a href="https://github.com/felipeplado21-jpg" target="_blank" rel="noreferrer" aria-label="Felipe Plado on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="contact-name">Your name</label>
@@ -26,8 +30,8 @@ export default function Contact() {
           <input id="contact-email" name="email" type="email" placeholder="jane@example.com" autoComplete="email" required />
           <label htmlFor="contact-message">A little about your idea</label>
           <textarea id="contact-message" name="message" rows="4" placeholder="Tell me what you're thinking..." required />
-          <button className="btn-solid form-submit" type="submit">{submitted ? "Message noted ✓" : "Send a message ↗"}</button>
-          <p className="form-note" aria-live="polite">{submitted ? "Thanks for reaching out! This demo form doesn't send data yet—email me directly to get in touch." : "Demo form · No details are stored or sent."}</p>
+          <button className="btn-solid form-submit" type="submit">{submitted ? "Opening your email app…" : "Send a message ↗"}</button>
+          <p className="form-note" aria-live="polite">{submitted ? "Your email app should open with this message ready to send." : "Submitting opens your email app; your message is not stored on this website."}</p>
         </form>
       </div>
       <footer className="footer"><a className="footer-brand" href="#home">FP<span>.</span></a><p>Designed & built with care by Felipe Plado</p><p>© 2026 Felipe L. Plado Jr.</p></footer>

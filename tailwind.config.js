@@ -7,12 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0B1120',
-        surface: '#0f172a',
-        accent: '#2dd4bf', // teal-400
+        background: '#090909',
+        surface: '#121212',
+        accent: '#f5f5f5',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'DM Sans', 'sans-serif'],
+        mono: ['DM Mono', 'monospace'],
       },
     },
   },
