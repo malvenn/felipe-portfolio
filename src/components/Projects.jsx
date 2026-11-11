@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 function ProjectCard({ project, reduceMotion }) {
-  const [imageFailed, setImageFailed] = useState(false);
-
   return (
     <motion.article
       className="project-card border border-black bg-white text-black"
@@ -13,23 +10,13 @@ function ProjectCard({ project, reduceMotion }) {
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
       <div className="project-img-container">
-        {project.image && !imageFailed ? (
+        {project.image ? (
           <img
             src={project.image}
-            alt={`${project.title} application screenshot`}
-            className="project-img"
-            onError={() => setImageFailed(true)}
+            alt={project.imageAlt}
+            className="w-full h-full object-cover block border border-black project-img"
           />
-        ) : (
-          <div className="project-img-fallback" role="img" aria-label={`${project.title} screenshot unavailable`}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="16" rx="1" />
-              <circle cx="8.5" cy="9" r="1.5" />
-              <path d="m21 15-5-5L5 20" />
-            </svg>
-            <span>Image Unavailable</span>
-          </div>
-        )}
+        ) : null}
         <span className="visual-label">PROJECT 0{project.id}</span>
       </div>
       <div className="project-info">
