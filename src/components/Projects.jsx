@@ -16,7 +16,11 @@ function ProjectCard({ project, reduceMotion }) {
             alt={project.imageAlt}
             className="w-full h-full object-cover block border border-black project-img"
           />
-        ) : null}
+        ) : (
+          <div className="project-image-placeholder" role="img" aria-label={project.imageAlt}>
+            <span>Project screenshot to be added</span>
+          </div>
+        )}
         <span className="visual-label">PROJECT 0{project.id}</span>
       </div>
       <div className="project-info">
@@ -43,7 +47,7 @@ export default function Projects({ projects }) {
 
   return (
     <section id="projects" className="section-container page-width">
-      <div className="section-heading"><p className="section-kicker">Projects and portfolio</p><h2 className="section-title"><span>04</span> Selected academic work</h2><p className="section-intro">Three projects that reflect my experience analyzing requirements, testing user flows, and documenting software.</p></div>
+        <div className="section-heading"><p className="section-kicker">Projects and portfolio</p><h2 className="section-title"><span>04</span> Selected academic work</h2><p className="section-intro">Three project cards are shown; replace the marked placeholder with verified project details before submission.</p></div>
 
       <div className="projects-grid">
         {projects.map((project) => <ProjectCard key={project.id} project={project} reduceMotion={reduceMotion} />)}

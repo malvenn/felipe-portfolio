@@ -19,7 +19,7 @@ export default function Contact() {
           <p className="section-kicker">06 · Contact</p>
           <h2 className="contact-title">Let’s start a<br /><span>conversation.</span></h2>
           <p className="contact-desc">I’m open to internship opportunities, collaborations, and conversations about practical software ideas.</p>
-          <a href="mailto:felipeplado21@gmail.com" className="contact-email">malvinplado@gmail.com <span aria-hidden="true">↗</span></a>
+          <a href="mailto:malvinplado@gmail.com" className="contact-email">malvinplado@gmail.com <span aria-hidden="true">↗</span></a>
           <a href="tel:+639913878919" className="contact-phone">+63 991 387 8919</a>
           <div className="social-links"><a href="https://github.com/felipeplado21-jpg" target="_blank" rel="noreferrer" aria-label="Felipe Plado on GitHub">GitHub <span aria-hidden="true">↗</span></a></div>
         </div>

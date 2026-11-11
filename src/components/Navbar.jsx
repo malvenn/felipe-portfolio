@@ -26,18 +26,18 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onOpen, onClose }
       </button>
       <button className={`sidebar-overlay${isOpen ? " is-open" : ""}`} type="button" aria-label="Close navigation menu" tabIndex={isOpen ? 0 : -1} onClick={onClose} />
       <div className={`sidebar-hover-zone transition-[width] duration-300 ease-in-out ${isOpen ? "is-open w-64" : "w-16"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <aside id="site-navigation" className={`sidebar bg-white border-r border-black text-black transition-[width] duration-300 ease-in-out${isOpen ? " is-open w-64" : " w-16"}`} aria-hidden={!isOpen} inert={!isOpen}>
+      <aside id="site-navigation" className={`sidebar bg-white border-r border-black text-black transition-[width] duration-300 ease-in-out${isOpen ? " is-open w-64" : " w-16"}`}>
         <a href="#home" className="sidebar-brand" onClick={onClose} aria-label="Felipe L. Plado Jr., home"><span className="sidebar-brand-compact" aria-hidden="true">FP</span><span className="sidebar-brand-full">&lt;Felipe <span>/&gt;</span></span></a>
 
         <p className="sidebar-label">Navigate</p>
         <nav className="nav-links" aria-label="Main navigation">
-          <a href="#home" onClick={onClose} aria-label="Home"><span className="nav-index">00</span><span className="nav-label">Home</span></a>
-          <a href="#about" onClick={onClose} aria-label="About and education"><span className="nav-index">01</span><span className="nav-label">About &amp; education</span></a>
-          <a href="#skills" onClick={onClose} aria-label="Skills"><span className="nav-index">02</span><span className="nav-label">Skills</span></a>
-          <a href="#experience" onClick={onClose} aria-label="Experience"><span className="nav-index">03</span><span className="nav-label">Experience</span></a>
-          <a href="#projects" onClick={onClose} aria-label="Projects"><span className="nav-index">04</span><span className="nav-label">Projects</span></a>
-          <a href="#certifications" onClick={onClose} aria-label="Training"><span className="nav-index">05</span><span className="nav-label">Training</span></a>
-          <a href="#contact" onClick={onClose} aria-label="Contact"><span className="nav-index">06</span><span className="nav-label">Contact</span></a>
+          <a href="#home" onClick={onClose} aria-label="Home"><span className="nav-icon" aria-hidden="true">H</span><span className="nav-label">Home</span></a>
+          <a href="#about" onClick={onClose} aria-label="About and education"><span className="nav-icon" aria-hidden="true">A</span><span className="nav-label">About &amp; education</span></a>
+          <a href="#skills" onClick={onClose} aria-label="Skills"><span className="nav-icon" aria-hidden="true">S</span><span className="nav-label">Skills</span></a>
+          <a href="#experience" onClick={onClose} aria-label="Experience"><span className="nav-icon" aria-hidden="true">E</span><span className="nav-label">Experience</span></a>
+          <a href="#projects" onClick={onClose} aria-label="Projects"><span className="nav-icon" aria-hidden="true">P</span><span className="nav-label">Projects</span></a>
+          <a href="#certifications" onClick={onClose} aria-label="Training"><span className="nav-icon" aria-hidden="true">T</span><span className="nav-label">Training</span></a>
+          <a href="#contact" onClick={onClose} aria-label="Contact"><span className="nav-icon" aria-hidden="true">C</span><span className="nav-label">Contact</span></a>
         </nav>
 
         <div className="sidebar-bottom">

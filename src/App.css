@@ -33,12 +33,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .sidebar-hover-zone.is-open .sidebar-label { max-height: 24px; margin: 38px 0 10px 10px; font-size: 10px; letter-spacing: .12em; opacity: 1; text-transform: uppercase; }
 .nav-links { display: grid; gap: 5px; }
 .nav-links a { display: flex; min-width: 0; min-height: 42px; align-items: center; justify-content: center; gap: 13px; overflow: hidden; padding: 8px; border: 1px solid transparent; color: #000; font-size: 0; transition: background .18s, color .18s, border-color .18s; }
-.nav-index { display: grid; width: 28px; min-width: 28px; height: 28px; place-items: center; border: 1px solid #000; font-family: var(--mono); font-size: 9px; }
+.nav-icon { display: grid; width: 28px; min-width: 28px; height: 28px; place-items: center; border: 1px solid #000; font-family: var(--mono); font-size: 11px; }
 .nav-label { display: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sidebar-hover-zone.is-open .nav-links a { justify-content: flex-start; padding-inline: 9px; font-size: 13px; }
 .sidebar-hover-zone.is-open .nav-label { display: inline; }
 .nav-links a:hover { background: #000; color: #fff; }
-.nav-links a:hover .nav-index { border-color: #fff; }
+.nav-links a:hover .nav-icon { border-color: #fff; }
 .sidebar-bottom { display: grid; gap: 14px; margin-top: auto; }
 .nav-btn { display: flex; min-width: 0; min-height: 42px; align-items: center; justify-content: center; gap: 9px; overflow: hidden; padding: 0 8px; border: 1px solid #000; background: #fff; color: #000; font-size: 0; transition: background .18s, color .18s; }
 .nav-btn svg { flex: 0 0 auto; }
@@ -81,6 +81,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .about-list { display: grid; gap: 11px; margin-top: 19px; list-style: none; }
 .about-list li { display: flex; gap: 10px; font-size: 12px; }
 .edu-card, .skill-card, .project-card, .cert-card, .experience-card { border: 1px solid #000; background: #fff; }
+.edu-card, .skill-card, .experience-card, .cert-card { transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.edu-card:hover, .skill-card:hover, .experience-card:hover, .cert-card:hover { border-color: #000; background: #000; color: #fff; }
+.edu-card:hover :is(h3, p, span), .skill-card:hover :is(h3, span), .experience-card:hover :is(h3, p, span), .cert-card:hover :is(h3, p, span) { color: #fff; }
+.edu-card:hover .edu-icon, .cert-card:hover .cert-icon, .experience-card:hover .experience-type { border-color: #fff; }
+.skill-card:hover .skill-tag { border-color: #fff; background: #000; color: #fff; }
 .edu-card { padding: 21px; }
 .card-kicker, .edu-location { font-family: var(--mono); font-size: 9px; }
 .edu-icon, .cert-icon { display: grid; width: 36px; height: 36px; place-items: center; margin: 12px 0; border: 1px solid #000; }
@@ -102,8 +107,15 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .experience-card h3 { margin: 4px 0; font-size: 16px; }
 .experience-card p:last-child { font-size: 12px; }
 .projects-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: stretch; gap: 15px; }
-.project-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; }
+.project-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 7.5px); justify-self: center; }
+.project-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.project-card:hover { border-color: #000; background: #000; color: #fff; }
+.project-card:hover :is(h3, p, dt, dd, a) { color: #fff; }
+.project-card:hover :is(.project-details, .project-links) { border-color: #fff; }
+.project-card:hover .project-stack span { border-color: #fff; background: #000; color: #fff; }
 .project-img-container { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid #000; }
+.project-image-placeholder { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; border: 1px solid #000; background: #fff; color: #000; font-family: var(--mono); font-size: 10px; text-align: center; text-transform: uppercase; }
+.project-card:hover .project-image-placeholder { border-color: #fff; background: #000; color: #fff; }
 .project-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .visual-label { position: absolute; top: 10px; left: 10px; padding: 4px 6px; border: 1px solid #000; background: #fff; font-family: var(--mono); font-size: 8px; }
 .project-info { display: flex; flex: 1; flex-direction: column; padding: 17px; }
@@ -125,6 +137,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-title { margin-top: 12px; font-family: var(--display); font-size: clamp(36px,4.5vw,52px); line-height: 1.1; }
 .contact-desc { max-width: 400px; margin-top: 14px; font-size: 12px; }
 .contact-email { display: inline-block; margin-top: 19px; font-size: 13px; font-weight: 600; }
+.contact-email:hover, .contact-phone:hover, .social-links a:hover { background: #000; color: #fff; }
 .contact-phone { display: block; margin-top: 6px; font-size: 12px; }
 .social-links { display: flex; gap: 16px; margin-top: 18px; font-size: 11px; }
 .contact-form { display: flex; flex-direction: column; }
@@ -158,6 +171,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .section-title { font-size: clamp(29px,8vw,40px); }
   .about-grid, .contact-panel { grid-template-columns: 1fr; gap: 18px; }
   .skills-grid, .projects-grid, .certs-grid { grid-template-columns: 1fr; gap: 10px; }
+  .project-card:last-child:nth-child(odd) { grid-column: auto; width: 100%; }
   .skill-card { min-height: 0; }
   .experience-card { grid-template-columns: 25px 1fr; gap: 10px; }
   .experience-type { grid-column: 2; justify-self: start; }

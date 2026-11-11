@@ -43,6 +43,19 @@ export default function App() {
       imageAlt: "Barangay System",
       repository: "https://github.com/felipeplado21-jpg",
       liveSite: "#contact",
+    },
+    {
+      id: 3,
+      title: "Academic Project — Details Coming Soon",
+      subtitle: "Project showcase placeholder",
+      stack: ["Add technologies"],
+      description: "Project title and details are intentionally left as a placeholder until the final academic project information is confirmed.",
+      objective: "Replace this card with an additional completed project before publishing the portfolio.",
+      role: "Add your specific contribution",
+      impact: "Add an accurate summary of your work, outcomes, and responsibilities.",
+      imageAlt: "Screenshot placeholder for a project to be added",
+      repository: "https://github.com/felipeplado21-jpg",
+      liveSite: "#contact",
     }
   ];
 
