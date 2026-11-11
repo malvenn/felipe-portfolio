@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 
-export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
+export default function Navbar({ resumeLink, isOpen, onToggle, onOpen, onClose }) {
+  const handleMouseEnter = () => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) onOpen();
+  };
+
+  const handleMouseLeave = () => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) onClose();
+  };
+
   useEffect(() => {
     if (!isOpen) return undefined;
     const closeOnEscape = (event) => {
@@ -17,7 +25,8 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
         <span />
       </button>
       <button className={`sidebar-overlay${isOpen ? " is-open" : ""}`} type="button" aria-label="Close navigation menu" tabIndex={isOpen ? 0 : -1} onClick={onClose} />
-      <aside id="site-navigation" className={`sidebar${isOpen ? " is-open" : ""}`} aria-hidden={!isOpen} inert={!isOpen}>
+      <div className={`sidebar-hover-zone${isOpen ? " is-open" : ""}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <aside id="site-navigation" className={`sidebar transition-all duration-300 ease-in-out${isOpen ? " is-open" : ""}`} aria-hidden={!isOpen} inert={!isOpen}>
         <a href="#home" className="sidebar-brand" onClick={onClose} aria-label="Felipe L. Plado Jr., home">&lt;Felipe <span>/&gt;</span></a>
 
         <p className="sidebar-label">Navigate</p>
@@ -40,6 +49,7 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
           <span className="sidebar-copyright">© 2026 Felipe L. Plado Jr.</span>
         </div>
       </aside>
+      </div>
     </>
   );
 }

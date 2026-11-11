@@ -9,8 +9,9 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 
 export default function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = useCallback(() => setSidebarOpen((open) => !open), []);
+  const openSidebar = useCallback(() => setSidebarOpen(true), []);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
   const resumeLink = "/Resume_PladoFelipe%20.pdf";
 
@@ -68,7 +69,7 @@ export default function App() {
 
   return (
     <div className={`app-shell min-h-screen w-full bg-white text-black bg-[none] !bg-white${sidebarOpen ? " sidebar-open" : ""}`}>
-      <Navbar resumeLink={resumeLink} isOpen={sidebarOpen} onToggle={toggleSidebar} onClose={closeSidebar} />
+      <Navbar resumeLink={resumeLink} isOpen={sidebarOpen} onToggle={toggleSidebar} onOpen={openSidebar} onClose={closeSidebar} />
       <main>
         <Hero resumeLink={resumeLink} />
         <About />
