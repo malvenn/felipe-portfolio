@@ -23,13 +23,13 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
 
         <p className="sidebar-label">Navigate</p>
         <nav className="nav-links" aria-label="Main navigation">
-          <a href="#home" onClick={onClose} aria-label="Home"><span className="nav-icon" aria-hidden="true">H</span><span className="nav-label">Home</span></a>
-          <a href="#about" onClick={onClose} aria-label="About and education"><span className="nav-icon" aria-hidden="true">A</span><span className="nav-label">About &amp; education</span></a>
-          <a href="#skills" onClick={onClose} aria-label="Skills"><span className="nav-icon" aria-hidden="true">S</span><span className="nav-label">Skills</span></a>
-          <a href="#experience" onClick={onClose} aria-label="Experience"><span className="nav-icon" aria-hidden="true">E</span><span className="nav-label">Experience</span></a>
-          <a href="#projects" onClick={onClose} aria-label="Projects"><span className="nav-icon" aria-hidden="true">P</span><span className="nav-label">Projects</span></a>
-          <a href="#certifications" onClick={onClose} aria-label="Training"><span className="nav-icon" aria-hidden="true">T</span><span className="nav-label">Training</span></a>
-          <a href="#contact" onClick={onClose} aria-label="Contact"><span className="nav-icon" aria-hidden="true">C</span><span className="nav-label">Contact</span></a>
+          <a href="#home" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="Home"><span className="nav-icon" aria-hidden="true">H</span><span className="nav-label">Home</span></a>
+          <a href="#about" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="About and education"><span className="nav-icon" aria-hidden="true">A</span><span className="nav-label">About &amp; education</span></a>
+          <a href="#skills" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="Skills"><span className="nav-icon" aria-hidden="true">S</span><span className="nav-label">Skills</span></a>
+          <a href="#experience" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="Experience"><span className="nav-icon" aria-hidden="true">E</span><span className="nav-label">Experience</span></a>
+          <a href="#projects" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="Projects"><span className="nav-icon" aria-hidden="true">P</span><span className="nav-label">Projects</span></a>
+          <a href="#certifications" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="Training"><span className="nav-icon" aria-hidden="true">T</span><span className="nav-label">Training</span></a>
+          <a href="#contact" className="transition-all duration-300 ease-in-out hover:bg-black hover:text-white" onClick={onClose} aria-label="Contact"><span className="nav-icon" aria-hidden="true">C</span><span className="nav-label">Contact</span></a>
         </nav>
 
         <div className="sidebar-bottom">
