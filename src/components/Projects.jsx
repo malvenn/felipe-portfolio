@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 function ProjectCard({ project, reduceMotion }) {
   return (
     <motion.article
-      className="project-card border border-black bg-white text-black"
+      className="project-card border border-border bg-surface text-espresso"
       initial={reduceMotion ? false : { opacity: 0, y: 16 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
@@ -14,7 +14,7 @@ function ProjectCard({ project, reduceMotion }) {
           <img
             src={project.image}
             alt={project.imageAlt}
-            className="w-full h-full object-cover block border border-black project-img"
+            className="w-full h-full object-cover block border border-border project-img"
           />
         ) : null}
         <span className="visual-label">PROJECT 0{project.id}</span>
@@ -43,7 +43,7 @@ export default function Projects({ projects }) {
 
   return (
     <section id="projects" className="section-container page-width">
-      <div className="section-heading"><p className="section-kicker">Projects and portfolio</p><h2 className="section-title"><span>04</span> Selected academic work</h2><p className="section-intro">Three projects that reflect my experience analyzing requirements, testing user flows, and documenting software.</p></div>
+      <div className="section-heading"><p className="section-kicker">Projects and portfolio</p><h2 className="section-title"><span>04</span> Selected academic work</h2><p className="section-intro">Two projects that reflect my experience analyzing requirements, testing user flows, and documenting software.</p></div>
 
       <div className="projects-grid">
         {projects.map((project) => <ProjectCard key={project.id} project={project} reduceMotion={reduceMotion} />)}

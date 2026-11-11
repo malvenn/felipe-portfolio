@@ -11,9 +11,9 @@ export default function Hero({ resumeLink }) {
         </p>
 
         <div className="hero-buttons">
-          <a href="#projects" className="btn-solid border border-black bg-white text-black hover:bg-black hover:text-white">View My Projects <span aria-hidden="true">↗</span></a>
-          <a href={resumeLink} download className="btn-glass border border-black bg-white text-black hover:bg-black hover:text-white">Download My Resume <span aria-hidden="true">↓</span></a>
-          <a href="#contact" className="btn-glass border border-black bg-white text-black hover:bg-black hover:text-white">Contact Me</a>
+          <a href="#projects" className="btn-solid border border-sage bg-sage text-white hover:bg-olive">View My Projects <span aria-hidden="true">↗</span></a>
+          <a href={resumeLink} download className="btn-glass border border-sage bg-surface text-sage hover:bg-sage-tint">Download My Resume <span aria-hidden="true">↓</span></a>
+          <a href="#contact" className="btn-glass border border-sage bg-surface text-sage hover:bg-sage-tint">Contact Me</a>
         </div>
         <div className="hero-meta"><span>Nueva Ecija, Philippines</span><span className="meta-divider" /><span>NEUST · BSIT</span></div>
       </div>

@@ -68,7 +68,7 @@ export default function App() {
   ];
 
   return (
-    <div className={`app-shell min-h-screen w-full bg-white text-black bg-[none] !bg-white${sidebarOpen ? " sidebar-open" : ""}`}>
+    <div className={`app-shell min-h-screen w-full bg-cream text-espresso${sidebarOpen ? " sidebar-open" : ""}`}>
       <Navbar resumeLink={resumeLink} isOpen={sidebarOpen} onToggle={toggleSidebar} onOpen={openSidebar} onClose={closeSidebar} />
       <main>
         <Hero resumeLink={resumeLink} />
