@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#090909',
-        surface: '#121212',
-        accent: '#f5f5f5',
+        background: '#ffffff',
+        surface: '#ffffff',
+        accent: '#000000',
       },
       fontFamily: {
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
