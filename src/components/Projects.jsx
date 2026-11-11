@@ -47,7 +47,7 @@ export default function Projects({ projects }) {
 
   return (
     <section id="projects" className="section-container page-width">
-        <div className="section-heading"><p className="section-kicker">Projects and portfolio</p><h2 className="section-title"><span>04</span> Selected academic work</h2><p className="section-intro">Three project cards are shown; replace the marked placeholder with verified project details before submission.</p></div>
+      <div className="section-heading"><p className="section-kicker">Projects and portfolio</p><h2 className="section-title"><span>04</span> Selected academic work</h2><p className="section-intro">Selected projects that reflect my experience analyzing requirements, testing user flows, and documenting software.</p></div>
 
       <div className="projects-grid">
         {projects.map((project) => <ProjectCard key={project.id} project={project} reduceMotion={reduceMotion} />)}

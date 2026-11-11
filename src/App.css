@@ -10,7 +10,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 ::selection { background: #000; color: #fff; }
 .app-shell { min-height: 100vh; width: 100%; overflow: clip; background: #fff; color: #000; transition: padding-left .3s ease-in-out; }
 .app-shell.sidebar-open { padding-left: 16rem; }
-.app-shell:not(.sidebar-open) { padding-left: 4rem; }
+.app-shell:not(.sidebar-open) { padding-left: 0; }
 .page-width { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
 
 /* Expandable, monochrome sidebar */
@@ -18,9 +18,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .menu-toggle span { width: 16px; height: 2px; background: currentColor; transition: transform .2s; }
 .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
 .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
-.sidebar-hover-zone { position: fixed; z-index: 52; inset: 0 auto 0 0; width: 4rem; height: 100dvh; overflow: hidden; border-right: 1px solid #000; background: #fff; transition: width .3s ease-in-out; }
+.sidebar-hover-zone { position: fixed; z-index: 52; inset: 0 auto 0 0; width: 0; height: 100dvh; overflow: hidden; border: 0; background: transparent; transition: width .3s ease-in-out; pointer-events: none; }
 .sidebar-hover-zone.is-open { width: 16rem; }
-.sidebar { position: absolute; inset: 0 auto 0 0; display: flex; width: 100%; min-width: 0; height: 100%; flex-direction: column; overflow: hidden; padding: 68px 10px 20px; border: 0; background: #fff; color: #000; white-space: nowrap; }
+.sidebar { position: absolute; inset: 0 auto 0 0; display: flex; width: 16rem; min-width: 0; height: 100%; flex-direction: column; overflow: hidden; padding: 68px 10px 20px; transform: translateX(-100%); border: 0; background: #fff; color: #000; opacity: 0; visibility: hidden; white-space: nowrap; transition: transform .3s ease-in-out, opacity .2s ease-in-out, visibility .3s; pointer-events: none; }
+.sidebar-hover-zone.is-open .sidebar { transform: translateX(0); opacity: 1; visibility: visible; pointer-events: auto; }
 .sidebar-brand { display: flex; min-height: 32px; align-items: center; justify-content: center; color: #000; font-family: var(--display); font-size: 18px; font-weight: 600; }
 .sidebar-brand-full { display: none; }
 .sidebar-brand-compact { display: inline; }
@@ -107,7 +108,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .experience-card h3 { margin: 4px 0; font-size: 16px; }
 .experience-card p:last-child { font-size: 12px; }
 .projects-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: stretch; gap: 15px; }
-.project-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 7.5px); justify-self: center; }
 .project-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
 .project-card:hover { border-color: #000; background: #000; color: #fff; }
 .project-card:hover :is(h3, p, dt, dd, a) { color: #fff; }
@@ -152,7 +152,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 900px) {
   .app-shell.sidebar-open, .app-shell:not(.sidebar-open) { padding-left: 0; }
   .sidebar-hover-zone.is-open { width: min(16rem,86vw); }
-  .sidebar.is-open { width: min(16rem,86vw); }
+  .sidebar-hover-zone.is-open .sidebar { width: min(16rem,86vw); }
   .sidebar-overlay { display: block; }
   .page-width { width: min(100% - 48px,760px); }
   .hero-section { min-height: 620px; gap: 28px; }
@@ -171,7 +171,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .section-title { font-size: clamp(29px,8vw,40px); }
   .about-grid, .contact-panel { grid-template-columns: 1fr; gap: 18px; }
   .skills-grid, .projects-grid, .certs-grid { grid-template-columns: 1fr; gap: 10px; }
-  .project-card:last-child:nth-child(odd) { grid-column: auto; width: 100%; }
   .skill-card { min-height: 0; }
   .experience-card { grid-template-columns: 25px 1fr; gap: 10px; }
   .experience-type { grid-column: 2; justify-self: start; }

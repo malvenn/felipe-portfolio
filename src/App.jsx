@@ -11,7 +11,6 @@ import Contact from "./components/Contact";
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = useCallback(() => setSidebarOpen((open) => !open), []);
-  const openSidebar = useCallback(() => setSidebarOpen(true), []);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
   const resumeLink = "/Resume_PladoFelipe%20.pdf";
 
@@ -44,19 +43,6 @@ export default function App() {
       repository: "https://github.com/felipeplado21-jpg",
       liveSite: "#contact",
     },
-    {
-      id: 3,
-      title: "Academic Project — Details Coming Soon",
-      subtitle: "Project showcase placeholder",
-      stack: ["Add technologies"],
-      description: "Project title and details are intentionally left as a placeholder until the final academic project information is confirmed.",
-      objective: "Replace this card with an additional completed project before publishing the portfolio.",
-      role: "Add your specific contribution",
-      impact: "Add an accurate summary of your work, outcomes, and responsibilities.",
-      imageAlt: "Screenshot placeholder for a project to be added",
-      repository: "https://github.com/felipeplado21-jpg",
-      liveSite: "#contact",
-    }
   ];
 
   const certificationsData = [
@@ -82,7 +68,7 @@ export default function App() {
 
   return (
     <div className={`app-shell min-h-screen w-full bg-cream text-espresso${sidebarOpen ? " sidebar-open" : ""}`}>
-      <Navbar resumeLink={resumeLink} isOpen={sidebarOpen} onToggle={toggleSidebar} onOpen={openSidebar} onClose={closeSidebar} />
+      <Navbar resumeLink={resumeLink} isOpen={sidebarOpen} onToggle={toggleSidebar} onClose={closeSidebar} />
       <main>
         <Hero resumeLink={resumeLink} />
         <About />

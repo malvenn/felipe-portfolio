@@ -1,14 +1,6 @@
 import { useEffect } from "react";
 
-export default function Navbar({ resumeLink, isOpen, onToggle, onOpen, onClose }) {
-  const handleMouseEnter = () => {
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) onOpen();
-  };
-
-  const handleMouseLeave = () => {
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) onClose();
-  };
-
+export default function Navbar({ resumeLink, isOpen, onToggle, onClose }) {
   useEffect(() => {
     if (!isOpen) return undefined;
     const closeOnEscape = (event) => {
@@ -25,8 +17,8 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onOpen, onClose }
         <span />
       </button>
       <button className={`sidebar-overlay${isOpen ? " is-open" : ""}`} type="button" aria-label="Close navigation menu" tabIndex={isOpen ? 0 : -1} onClick={onClose} />
-      <div className={`sidebar-hover-zone transition-[width] duration-300 ease-in-out ${isOpen ? "is-open w-64" : "w-16"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <aside id="site-navigation" className={`sidebar bg-white border-r border-black text-black transition-[width] duration-300 ease-in-out${isOpen ? " is-open w-64" : " w-16"}`}>
+      <div className={`sidebar-hover-zone${isOpen ? " is-open" : ""}`}>
+      <aside id="site-navigation" className={`sidebar bg-white border-r border-black text-black${isOpen ? " is-open" : ""}`} aria-hidden={!isOpen} inert={!isOpen}>
         <a href="#home" className="sidebar-brand" onClick={onClose} aria-label="Felipe L. Plado Jr., home"><span className="sidebar-brand-compact" aria-hidden="true">FP</span><span className="sidebar-brand-full">&lt;Felipe <span>/&gt;</span></span></a>
 
         <p className="sidebar-label">Navigate</p>
