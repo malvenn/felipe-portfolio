@@ -20,7 +20,7 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onOpen, onClose }
 
   return (
     <>
-      <button className="menu-toggle border border-border bg-surface text-espresso hover:bg-sage hover:text-surface" type="button" aria-expanded={isOpen} aria-controls="site-navigation" aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"} onClick={onToggle}>
+      <button className="menu-toggle border border-black bg-white text-black hover:bg-black hover:text-white" type="button" aria-expanded={isOpen} aria-controls="site-navigation" aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"} onClick={onToggle}>
         <span />
         <span />
       </button>
@@ -41,7 +41,7 @@ export default function Navbar({ resumeLink, isOpen, onToggle, onOpen, onClose }
         </nav>
 
         <div className="sidebar-bottom">
-          <a href={resumeLink} download className="nav-btn border border-sage bg-surface text-sage hover:bg-sage hover:text-surface" onClick={onClose}>
+          <a href={resumeLink} download className="nav-btn border border-black bg-white text-black hover:bg-black hover:text-white" onClick={onClose}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
             Download résumé
           </a>

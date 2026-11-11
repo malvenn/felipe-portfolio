@@ -30,7 +30,7 @@ export default function Contact() {
           <input id="contact-email" name="email" type="email" placeholder="jane@example.com" autoComplete="email" required />
           <label htmlFor="contact-message">A little about your idea</label>
           <textarea id="contact-message" name="message" rows="4" placeholder="Tell me what you're thinking..." required />
-          <button className="btn-solid form-submit border border-sage bg-sage text-white hover:bg-olive" type="submit">{submitted ? "Opening your email app…" : "Send a message ↗"}</button>
+          <button className="btn-solid form-submit border border-black bg-white text-black hover:bg-black hover:text-white" type="submit">{submitted ? "Opening your email app…" : "Send a message ↗"}</button>
           <p className="form-note" aria-live="polite">{submitted ? "Your email app should open with this message ready to send." : "Submitting opens your email app; your message is not stored on this website."}</p>
         </form>
       </div>
