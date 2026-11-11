@@ -7,17 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#FAFAF9',
-        cream: '#FAFAF9',
+        background: '#FFFFFF',
+        cream: '#FFFFFF',
         surface: '#FFFFFF',
-        soft: '#F5F5F4',
-        border: '#E7E5E4',
-        espresso: '#292524',
-        stone: '#78716C',
-        accent: '#4D6A4E',
-        sage: '#4D6A4E',
-        olive: '#3F5740',
-        'sage-tint': '#EBF0EC',
+        soft: '#FFFFFF',
+        border: '#000000',
+        espresso: '#000000',
+        stone: '#000000',
+        accent: '#000000',
+        sage: '#000000',
+        olive: '#000000',
+        'sage-tint': '#FFFFFF',
       },
       fontFamily: {
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
