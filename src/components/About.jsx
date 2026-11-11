@@ -9,15 +9,15 @@ export default function About() {
           <p>I’m especially interested in scalable web and mobile development, accessible interfaces, and dependable data systems. My professional goal is to grow into a well-rounded developer and systems analyst who can collaborate across disciplines and deliver software that solves practical problems.</p>
           <ul className="about-list">
             <li>
-              <span className="text-teal" aria-hidden="true">↗</span>
+              <span className="about-marker" aria-hidden="true">↗</span>
               <span><strong>Curious by default:</strong> I keep learning new tools and strengthen my fundamentals as I build.</span>
             </li>
             <li>
-              <span className="text-teal" aria-hidden="true">↗</span>
+              <span className="about-marker" aria-hidden="true">↗</span>
               <span><strong>Analytical approach:</strong> I value clear requirements, useful documentation, and careful testing.</span>
             </li>
             <li>
-              <span className="text-teal" aria-hidden="true">↗</span>
+              <span className="about-marker" aria-hidden="true">↗</span>
               <span><strong>Collaborative mindset:</strong> Open to feedback and focused on building practical, understandable solutions.</span>
             </li>
           </ul>

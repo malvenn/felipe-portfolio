@@ -6,7 +6,7 @@ function ProjectCard({ project, reduceMotion }) {
 
   return (
     <motion.article
-      className="project-card"
+      className="project-card border border-black bg-white text-black"
       initial={reduceMotion ? false : { opacity: 0, y: 16 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
