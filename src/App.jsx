@@ -9,7 +9,7 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 
 export default function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = useCallback(() => setSidebarOpen((open) => !open), []);
   const closeSidebar = useCallback(() => setSidebarOpen(false), []);
   const resumeLink = "/Resume_PladoFelipe%20.pdf";
@@ -31,19 +31,6 @@ export default function App() {
     },
     {
       id: 2,
-      title: "Inventory Management System",
-      subtitle: "Academic Inventory Management Application",
-      stack: ["Java", "MySQL"],
-      description: "A desktop application concept for maintaining item records and supporting routine inventory tasks.",
-      objective: "Keep inventory data structured and make item information easier to record, find, and maintain.",
-      role: "Systems Analyst, QA, and Technical Documenter",
-      impact: "Contributed to requirements analysis, test planning, and project documentation for the academic development team.",
-      imageAlt: "Inventory Management System screenshot",
-      repository: "https://github.com/felipeplado21-jpg",
-      liveSite: "#contact",
-    },
-    {
-      id: 3,
       title: "Barangay System",
       subtitle: "Barangay Health Workers Management System",
       stack: ["Python", "MySQL"],
